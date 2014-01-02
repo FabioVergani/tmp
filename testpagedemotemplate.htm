@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head></head><body style="background:#ddd" spellcheck="false">
+<pre><textarea id="ToParse" style="width:90%;height:160px"></textarea></pre>
+<a id="Start" href="#">RUN CODE</a><br />
+<pre><textarea id="Result" style="width:90%;height:160px">...</textarea></pre>
+<script type="text/javascript">"use strict";
+//§Framework:Polyfill — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+(function(Polyfill){
+
+ Polyfill(String.prototype,'contains',function(s,i){return this.indexOf(s,i)>=0});
+
+})(function(o,p,x){if(!o[p]){o[p]=x}});
+//#Framework:Required — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+function $id(s){var e=document.getElementById(s);return e?e:/^[a-z][\w:.-]*$/i.test(s)?null:0};
+//
+function isBlank(x){return x?x.length>=0?isNaN(x)?0:1:0:x!==0&&x!==false&&x!==null};
+
+/*
+function KeysOf(o,s){return Object.keys(o).join(s||'')};
+function ShortHex(s){var a=s[0],b=s[2],c=s[4];return((a==s[1]&&b==s[3]&&c==s[5])?(a+b+c):s)};
+*/
+
+//#App —-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—
+function Test(x){
+ var r='';
+ return r;
+};
+//
+
+
+
+//#Test —-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—
+$id("Start").onclick=function Run(){$id("Result").value=Test($id("ToParse").value)};
+</script>
+</body>
+</html>
+<!--
+-->
