@@ -7,10 +7,10 @@ array.filter
 var verbose=1;
 //▒··························
 function DoNothing(){};
-function EachIn(m,f){for(var i in m){f(m[i])}};
+function EachIn(m,f){for(var i in m){f(m[i],i)}};
 //▒·······················································································
 var trace={};
-(function(o,v){var f=(v&&o)?function(p){trace[p]=function(s){if(s!=""){o[p](s)}}}:function(p){trace[p]=DoNothing};EachIn(["log","info","warn","dir"],f)})(console,verbose);
+(function(o,v){var k=(v&&o),f=k?function(p){trace[p]=function(s){if(s!=''){o[p](s)}}}:function(p){trace[p]=DoNothing};EachIn(['log','info','warn','dir'],f);trace.obj=k?function(e,t){o.log("%c"+(t||e),'font:700 13px arial');EachIn(e,function(x,i){o.group();o.log("%c"+i+":"+x,'font-size:12px;color:navy');o.groupEnd()})}:DoNothing})(console,verbose)
 //▒
 var Error=Error||{};
 var Exception={isNot:{}};
@@ -21,10 +21,10 @@ var is={
 	defined:(function(u){return function(o){return o==u}})(void(0))//, …
  }//, …
 };
-//▒
-EachIn(['Array','Function'],function(p){var f=Object.prototype.toString,a='[object\u0020',b=']';is[p]=function(o){return f.call(o)==(a+p+b)}});//,'Boolean' ,'Object','String','Function','Number','RegExp','Date'
 //▒··································································································································································································································································································································································
+EachIn(['Array','Function'],function(p){var f=Object.prototype.toString,a='[object\u0020',b=']';is[p]=function(o){return f.call(o)==(a+p+b)}});//,'Boolean' ,'Object','String','Function','Number','RegExp','Date'
 is.Array=Array.isArray||is.Array;
+//▒
 (function(e,p){if(!e[p]){e[p]=function(f,x){var m,e=this,c=Exception.isNot,E=TypeError;if(is.Function(f)){if(e==null||e.length<1){c.Data(new E(e))}}else{c.Function(new E(f))};m=[];for(var v,i=0,o=Object(e),l=(o.length>>>0);i<l;i++){if(i in o){v=o[i];if(f.call(x,v,i,o)){m.push(v)}}};return m}}})(Array.prototype,'filter');
 //▒······················································································································································································································································································································································································································································································································································································································
 var are={
@@ -36,12 +36,19 @@ var are={
 function SetProto(o,v){var p="__proto__";if(p in o){o[p]=v};return o};
 EachIn([is.not.defined,are.not.defined],function(e){SetProto(e,null)});
 //▒------------------------------------------------------------------------------------------------------
+//==============================================================
+//Arguments
+var baseurl
 //DetectRequiredFeatures:
 var lost=are.not.defined(document,['getElementById','styleSheets','nodeType']);
 if(lost.length>0){//can polyfill?
  trace.warn('unsupported items: ‹'+lost+'›');
 }else{
  trace.info('element ‹'+document+'› has all requirement.');
+ var path={base:(baseurl||document.location.href)};
+ trace.obj(path,"Path");
+ var mode='browser'
+
 };
 
 
@@ -70,6 +77,7 @@ console.log(are.not.defined([],[]))
 function(){};
 if(){}else{};
 
+'group','groupCollapsed','groupEnd'
 
 var e=this;
 var d=document;
