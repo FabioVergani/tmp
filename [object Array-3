@@ -8,8 +8,12 @@ console.clear();
  "[object Array 33 super ]"
 ].forEach(function(x,j){
 
-  var p=/(\s*\[object\s+)()(\s*\]\s*$)/;
+  var p=
+  
+  /(\s*\[object\s+)()(\s*\]\s*$)/;
       
+ (\[object\s+)(.*)(\s*\])
+ 
  
 	console.log(j,x,'\n\t');
     console.log("|"+x.match(p)[2]+"|");
