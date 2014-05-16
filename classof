@@ -1,0 +1,10 @@
+function classof(o){
+        var t = typeof o;
+        if(t === "object") return o === null ? "null" : getClass.call(o).slice(8,-1);
+        else if(t === "number") return "Number";
+        else if(t === "string") return "String";
+        else if(t === "function") return "Function";
+        else if(t === "boolean") return "Boolean";
+        else return t;
+}
+classof(v);
