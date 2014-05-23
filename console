@@ -1,0 +1,67 @@
+var noop = function noop() {};
+var methods = [
+	'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+	'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+	'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+	'timeStamp', 'trace', 'warn'
+];
+var console = (window.console = window.console || {});
+var e, l = methods.length;
+
+while (l--) {
+	e = methods[length];
+
+	if (!console[e]) {
+		console[e] = noop;
+	}
+}
+
+
+
+/*
+window.open("","myWindow")
+ˋ
+ if(e instanceof theScript){
+ }else{
+ };
+
+ f= ?e:theScript;
+
+ if(){};
+
+ (function theScript(){
+
+ }.bind(theWindow))();
+
+
+
+
+
+
+
+/*
+//#
+(function(w,f){
+ var l='load',d=w.document,i='at'+l,init=function(){w.removeEventListener(l,i,0);f(w,d)};
+ w.addEventListener(l,init,0);
+})(this,function(w,d){
+ console.group('UsedStyles:');
+ console.log(StylesIn(d));
+ console.groupEnd();
+});
+
+/*
+w?theWindow
+f?theAction
+
+function whenLoaded(w,f){
+ var l='load',d=w.document,i='at'+l,init=function(){w.removeEventListener(l,i,0);f(w,d)};
+ w.addEventListener(l,init,0);
+}
+
+
+function atLoad(e,f){
+ var l='load',i='when'+l,init=function(){e.removeEventListener(l,i,0);f(e)};
+ e.addEventListener(l,init,0);
+}
+*/
