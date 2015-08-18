@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pure Css FrontEnd Lab UI</title>
+	<meta name="author" content="Fabio Vergani">
+	<style>
+
+
+
+
+html,body,div,p,input,iframe,textarea{box-sizing:border-box;padding:0;margin:0;border:0;outline:0;overflow:hidden;}
+html,body,#panels{font-size:0;line-height:0;white-space:nowrap;height:100%;width:100%;}
+textarea{overflow-y:auto;}
+
+#panels{display:flex;background:#d8d8d8;}
+
+#panels > input[type="checkbox"]:not(:checked):before,
+#panels > textarea,#options{border-left:1px solid #b6b6b6;}
+
+#panels > textarea,#options{background:#e4e4e4;font-size:16px;line-height:18px;}
+#panels > textarea:focus{background:#f0f0f0;}
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked) + textarea,
+#panels > textarea{padding:18px 0 0 2px;visibility:visible;resize:none;flex-grow:1;}
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked),
+#panels > input[type="checkbox"]{position:absolute;height:14px;width:0;margin:2px 0 0 3px;overflow:visible;cursor:pointer;}
+
+#panels > input[type="checkbox"]:first-child,
+#panels > input[type="checkbox"]:not(:checked){margin:1px 0 0 2px;width:12px;}
+
+#panels > input[type="checkbox"]:not(:checked) + *{width:16px;flex-grow:0;visibility:hidden;}
+
+#panels > input[type="checkbox"]:not(:checked):before{display:block;content:'';position:absolute;top:-1px;left:-2px;bottom:auto;width:15px;height:100vh;background:#ddd;}
+
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked):after,
+#panels > input[type="checkbox"]:after{color:#b4b4b4;
+display:inline-block;content:attr(id)':';vertical-align:top;
+font:14px/14px monospace;text-transform:uppercase;
+-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);
+writing-mode:lr-tb;
+}
+
+#panels > input[type="checkbox"]:not(:checked):after{color:#c2c2c2;
+-webkit-transform:rotate(90deg);
+-moz-transform:rotate(90deg);
+-ms-transform:rotate(90deg);
+-o-transform:rotate(90deg);
+transform:rotate(90deg);
+writing-mode:tb-rl;
+content:attr(id);
+display:block;
+}
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js,
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:after{cursor:default;pointer-events:none;}
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked):before,
+#panels > input[type="checkbox"]:checked:first-child:after,
+#options{display:none !important;}
+
+#options,#about{height:100%;}
+#about{width:340px;}
+
+#result:not(:checked) ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked) ~ #options{display:block !important;flex-grow:1;}
+
+
+#panels > input[type="checkbox"]:checked:first-child:not(:hover){opacity:0}
+
+
+
+
+
+
+
+/*
+
+
+width:0 !important
+left:-1px;
+top:0;
+
+
+
+#html:not(:checked) ~ #css:not(:checked) ~ #js:checked{pointer-events:none;}
+
+{
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:not(:checked){}
+
+
+background:red;color:red !important}
+input[type="checkbox"]
+
+#html:not(:checked) ~
+
+#result:not(:checked) ~ #html:not(:checked) ~ #css:not(:checked) ~ #js + textarea{display:none}
+
+width: 16px;
+flex-grow: 0;
+
+visibility:visible;
+visibility:hidden
+
+:not(:first-child)
+
+
+z-index: 1;
+
+
+
+
+#result + iframe{width:20%;background:#d8d8d8;}
+
+#result:checked ~ #html:not(:checked) ~ #css:not(:checked) ~ #js + textarea,
+#result:not(:checked) ~ #html:not(:checked) ~ #css:not(:checked) ~ #js + textarea,
+#result:not(:checked) ~ #html:not(:checked) ~ #css:not(:checked) ~ #js:checked + textarea{flex-grow:1;pointer-events:auto;}
+
+
+
+
+opacity:0;flex-grow:1
+pointer-events:none;overflow-y:hidden;
+
+line-height:;font-size:
+width:14px;
+height:14px;
+-webkit-appearance:checkbox;
+#panels > input[type="checkbox"] + *:focus::-webkit-input-placeholder{font-size:0;}
+
+#panels > input[type="checkbox"] + *::-webkit-input-placeholder{text-indent:18px;}
+
+
+color:#166399; font-style:italic;
+::-moz-input-placeholder { color:#166399; font-style:italic;}
+::-ms-input-placeholder { color:#166399; font-style:italic;}
+
+
+:checked ~
+:not(:checked) ~
+~ #,
+~
+
+flex-grow:0;
+
+vertical-align:top;
+
+display:block;
+
+/*
+
+textarea{
+-webkit-transition:width .2s ease;
+-moz-transition:width .2s ease;
+-o-transition:width .2s ease;
+transition:width .2s ease;
+}
+input:not(:checked):after{display:none;}
+
+input:after {
+display:block;
+content:'';
+width:14px;
+height:14px;
+background:red;
+position:relative;
+left:14px;
+-webkit-appearance:checkbox;
+}
+*/
+
+
+
+	</style>
+<!-- -->
+</head>
+<body>
+
+	<div id="panels">
+		<input type="checkbox" checked id="result"><iframe></iframe>
+		<input type="checkbox" checked id="html"><textarea></textarea>
+		<input type="checkbox" checked id="css"><textarea></textarea>
+		<input type="checkbox" checked id="js"><textarea></textarea>
+		<p id="options">
+			<iframe id="about" src="https://htmlpreview.github.io/?https://github.com/FabioVergani/CSS-Business-Flip--Card/blob/master/businesscard.htm" seamless></iframe>
+		</p>
+	</div>
+
+<!--
+
+
+<script>
+(function(win){
+var w=win, d=w.document, $id=d.getElementById.bind(d);
+
+var e =d.querySelector('input:after');
+
+e.onclick=function(){
+alert(111)
+};
+
+})(window);
+</script>
+-->
+<script>
+
+</script>
+</body>
+</html>
