@@ -1,0 +1,42 @@
+*{box-sizing:border-box}
+
+body{color:#333;}
+
+form,
+form>*{
+ font:400 15px/18px sans-serif;
+ word-spacing:normal;
+ letter-spacing:normal;
+ text-transform:none;
+ text-shadow:none;
+ text-indent:0;
+ border-radius:0;
+ box-shadow:none;
+}
+
+form>*{
+ width:100%;min-height:30px;margin:0 0 6px;
+ text-align:left;word-wrap:break-word;
+ border:solid 1px #cdcdcd;
+}
+
+form{text-align:right}
+select{padding:5px}
+input,textarea,label{padding:5px 9px}
+
+textarea,label{display:block;}
+
+textarea{
+ resize:auto;
+ overflow:auto;
+ white-space:pre-wrap;
+ background:#fff;color:#444;
+}
+
+
+input[type=radio]{vertical-align:middle;margin:0 4px 2px -2px}
+
+
+
+
+#invia{width:auto;text-align:center;cursor:pointer;}
